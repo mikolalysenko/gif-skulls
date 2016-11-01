@@ -46,7 +46,7 @@ const drawBackground = regl(Object.assign({
 
   void main () {
     vec4 pcolor = texture2D(prevPixels, uv);
-    gl_FragColor = vec4(pcolor.rgb * 0.99, 1);
+    gl_FragColor = vec4(pcolor.rgb, 1);
   }
   `,
 
@@ -172,7 +172,7 @@ const drawSkulls = regl({
           [-1, 1],
           [1, 1]
         ])
-        const s = Math.random() * 0.125
+        const s = Math.random() * 0.25 + 0.01
         for (let l = 0; l < 6; ++l) {
           ids.push([
             i / N,

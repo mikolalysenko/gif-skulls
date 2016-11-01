@@ -4,20 +4,27 @@
   "description": "Spooky skulls from geocities, dug up by the internet archive",
   "main": "index.js",
   "dependencies": {
+    "browserify": "^13.1.1",
+    "budo": "^9.2.1",
     "es2020": "^1.1.9",
     "gl-mat4": "^1.1.4",
     "glsl-curl-noise": "^0.0.4",
     "glslify": "^6.0.1",
+    "indexhtmlify": "^1.3.1",
     "regl": "^1.3.0",
     "resl": "^1.0.3"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "budo index.js --open",
+    "build": "browserify index.js | indexhtmlify > index.html"
   },
   "author": "Mikola Lysenko",
   "license": "MIT",
   "browserify": {
-    "transform": ["glslify", "es2020"]
+    "transform": [
+      "glslify",
+      "es2020"
+    ]
   }
 }
